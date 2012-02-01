@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Members::Application.routes.draw do  
+  mount RailsAdmin::Engine => '/backoffice', :as => 'rails_admin'
+
   devise_for :admins
 
   resources :members

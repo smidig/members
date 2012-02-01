@@ -7,6 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'thin'
 gem 'devise'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development, :test do
 	gem 'sqlite3'
