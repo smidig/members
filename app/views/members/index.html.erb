@@ -1,13 +1,13 @@
-<h1>Listing members</h1>
+<h3>Medlemmer</h3>
 
 <table>
   <tr>
-    <th>Email</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Postcode</th>
-    <th>City</th>
-    <th>Country</th>
+    <th>Epost</th>
+    <th>Navn</th>
+    <th>Adresse</th>
+    <th>Postnr</th>
+    <th>Sted</th>
+    <th>Land</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,13 +21,12 @@
     <td><%= member.postcode %></td>
     <td><%= member.city %></td>
     <td><%= member.country %></td>
-    <td><%= link_to 'Show', member %></td>
-    <td><%= link_to 'Edit', edit_member_path(member) %></td>
-    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', member, :class => 'btn success' %></td>
+    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete, :class => 'btn danger'  %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Member', new_member_path %>
+<%= link_to 'Nytt medlem', new_member_path, :class => 'btn primary' %>

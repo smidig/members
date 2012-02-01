@@ -4,6 +4,8 @@ Members::Application.routes.draw do
 
   resources :members
 
+  get 'statute_home', :to => 'home#statute'
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:
