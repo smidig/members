@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  email: MyString
+  email: member1@member.test
   name: MyString
   address: MyString
-  postcode: MyString
+  postcode: 0291
   city: MyString
   country: MyString
 
 two:
-  email: MyString
+  email: member2@member.test
   name: MyString
   address: MyString
-  postcode: MyString
+  postcode: 0982
   city: MyString
   country: MyString

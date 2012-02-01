@@ -1,10 +1,10 @@
+# -*- encoding : utf-8 -*-
 class Member < ActiveRecord::Base
-	validates :name, :address, :postcode, :city, :presence => true
+	validates :name, :address, :city, :presence => true
 	validates :postcode, :presence => true, :numericality => true
 
 	validates :email, :presence => true, 
                       :length => {:minimum => 3, :maximum => 254},
-                      :uniqueness => true,
-                      :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+                      :uniqueness => true
   
 end

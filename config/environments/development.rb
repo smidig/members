@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Members::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -34,4 +35,7 @@ Members::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Configuration for devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

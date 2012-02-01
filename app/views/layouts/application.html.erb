@@ -11,13 +11,13 @@
   <div class="topbar">
     <div class="fill">
       <div class="container">
-        <a class="brand" href="#">Smidigkonferansen medlemsregister</a>
+        <%= link_to 'Smidigkonferansen', root_url, :class => 'brand' %>
 
         <ul class="nav">
-          <li class="active"><a href="#">Hjem</a></li>
+          <li class="active"><%= link_to 'Hjem', root_url %></li>
           <li><%= link_to 'Meld deg inn', new_member_path %></li>          
           <li><a href="#vedtekter">Vedtekter</a></li>
-          <li><a href="#login">Logg inn</a></li>
+          <%= render :partial => 'common/admin_menu' %>
         </ul>
       </div>
     </div>

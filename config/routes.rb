@@ -1,4 +1,7 @@
-Members::Application.routes.draw do
+# -*- encoding : utf-8 -*-
+Members::Application.routes.draw do  
+  devise_for :admins
+
   resources :members
 
   root :to => "home#index"

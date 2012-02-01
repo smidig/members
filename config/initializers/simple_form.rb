@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 SimpleForm.setup do |config|
   # Wrappers are used by the form builder to generate a complete input.
   # You can remove any component from the wrapper, change the order or even
