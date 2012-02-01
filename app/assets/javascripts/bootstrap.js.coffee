@@ -1,22 +1,19 @@
 $ ->
+  $("body > .topbar").scrollSpy()
+$ ->
+  $(".tabs").tabs()
+$ ->
+  $("a[rel=twipsy]").twipsy live: true
+$ ->
+  $("a[rel=popover]").popover offset: 10
+$ ->
+  $(".topbar-wrapper").dropdown()
+$ ->
   $(".alert-message").alert()
 $ ->
-  $(".tabs").button()
-$ ->
-  $(".carousel").carousel()
-$ ->
-  $(".collapse").collapse()
-$ ->
-  $(".dropdown-toggle").dropdown()
-$ ->
-  $(".modal").modal
-$ ->
-  $("a[rel]").popover
-$ ->
-  $(".navbar").scrollspy()
-$ ->
-  $(".tab").tab "show"
-$ ->
-  $(".tooltip").tooltip
-$ ->
-  $(".typeahead").typeahead()  
+  domModal = $(".modal").modal(
+    backdrop: true
+    closeOnEscape: true
+  )
+  $(".open-modal").click ->
+    domModal.toggle()  

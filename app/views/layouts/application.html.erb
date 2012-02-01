@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Members</title>
+  <title>Smidigkonferansens medlemsregister</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="#">Smidigkonferansen medlemsregister</a>
+
+        <ul class="nav">
+          <li class="active"><a href="#">Hjem</a></li>
+          <li><%= link_to 'Meld deg inn', new_member_path %></li>          
+          <li><a href="#vedtekter">Vedtekter</a></li>
+          <li><a href="#login">Logg inn</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <%= render :partial => 'common/flashes' %>
+    <%= yield %>
+    <footer>
+      <p>&copy; Smidigkonferansen 2011 - <%= Date.today.year%></p>
+
+    </footer>
+  </div><!-- /container -->
 
 </body>
 </html>

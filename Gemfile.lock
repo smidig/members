@@ -115,10 +115,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.0)
-      actionpack (>= 3.2.1)
-      less-rails (~> 2.1.2)
-      railties (>= 3.2.1)
+    twitter-bootstrap-rails (1.4.3)
+      actionpack
+      jquery-rails (>= 1.0)
+      less-rails (~> 2.1.0)
+      railties
     tzinfo (0.3.31)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -137,6 +138,6 @@ DEPENDENCIES
   rails (= 3.2.1)
   simple_form!
   sqlite3
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (~> 1.4.3)
   uglifier (>= 1.0.3)
   yui-compressor
