@@ -1,1 +1,11 @@
 <h3>Bla bla bla</h3>
+
+<% if member_signed_in? %>
+<p>
+  <% if current_member.participate %>
+    Jeg deltar!
+  <% else %>
+    Dessverre, jeg har ikke muligheten til å delta
+  <% end %>
+</p>
+<% end %>
