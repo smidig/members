@@ -15,8 +15,11 @@
 
         <ul class="nav">
           <li><%= link_to 'Hjem', root_url %></li>
-          <li><%= link_to 'Meld deg inn', new_member_path %></li>          
           <li><%= link_to 'Vedtekter', statute_home_path %></li>
+          <%= render :partial => 'common/member_menu' %>
+
+        </ul>
+        <ul class="nav secondary-nav">
           <%= render :partial => 'common/admin_menu' %>
         </ul>
       </div>

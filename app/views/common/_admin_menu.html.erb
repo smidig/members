@@ -1,8 +1,6 @@
-
-<% if admin_signed_in? %>
-	<li><%= link_to('Backoffice', rails_admin_path) %></li>        
-	<li><%= link_to('Logg ut', destroy_admin_session_path, :method => :delete) %></li>        
-<% else %>
-	<li><%= link_to('Logg inn', new_admin_session_path)  %></li> 
-<% end %>
-          
+<% if admin_signed_in?  %>
+  <li><%= link_to('Backoffice', rails_admin_path) %></li>
+  <li><%= link_to "Admin logg ut", destroy_admin_session_path, :method => :delete %> </li>
+<% else  %>
+  <li><%= link_to "Admin", new_admin_session_path %></li>
+<% end  %>

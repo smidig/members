@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
-Members::Application.routes.draw do  
+Members::Application.routes.draw do
   mount RailsAdmin::Engine => '/backoffice', :as => 'rails_admin'
 
   devise_for :admins
+  devise_for :members
 
-  resources :members
+  #resources :members
 
   get 'statute_home', :to => 'home#statute'
 

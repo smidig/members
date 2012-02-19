@@ -7,10 +7,11 @@ gem 'rails', '3.2.1'
 
 gem 'thin'
 gem 'devise'
+gem 'devise_invitable'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development, :test do
-	gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :ref => "9f7a7bcbb9323e91cf8b9261bf2b31c2a174b342"

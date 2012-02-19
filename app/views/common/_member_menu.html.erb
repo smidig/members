@@ -1,0 +1,5 @@
+<% if member_signed_in? %>
+  <li><%= link_to('Logg ut', destroy_member_session_path, :method => :delete) %></li>
+<% else %>
+  <li><%= link_to('Logg inn', new_member_session_path)  %></li>
+<% end %>
