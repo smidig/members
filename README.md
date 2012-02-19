@@ -12,6 +12,9 @@ bundle install  #NB: jeg opplever noen rare ting med at executablen ikke blir re
 rake db:migrate
 rake test
 
+rake db:seed #Loads what's in db/seeds.rb
+rails s #start server
+
 
 # Server
 Deployed at heroku. Ask Knut Johannes Dahle or Ole Morten Heggebakken Amundsen for access.

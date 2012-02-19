@@ -7,4 +7,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Admin.create!(:email => 'info@rubykurs.no', :password => 'rubyrocks')
+Admin.find_by_email(email = 'info@rubykurs.no') || Admin.create!(email: email, password: 'rubyrocks')
+
+Member.find_by_email(email = 'oma@imagenetmd.com') ||
+  Member.create!(email: email, password: 'rubyrocks',
+   name: "Ole Morten Heggebakken Amundsen",
+   address: 'Gamlevegen 17',
+   city: 'Porsgrunn',
+   postcode: '3922'
+   )
