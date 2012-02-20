@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 
-# Ignore rvmrc
-/.rvmrc
+# Don't ignore rvmrc
+
+mailer.yml
