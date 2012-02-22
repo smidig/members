@@ -15,6 +15,7 @@ class Member < ActiveRecord::Base
   def self.mass_invite(email_name_string)
     email_name_string.lines.reduce([]) do |members, line|
       email, name = line.split(',')
+      raise "ugyldig format. både epost (#{email}) og navn (#{name}) må oppgis. Kontroller din input ved å trykke BACK knappen i nettleseren" if email.nil? || name.nil?
       members << {email: email.chomp, name: name.gsub('"','').chomp}
     end
   end
