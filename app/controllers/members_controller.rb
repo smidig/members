@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   USER_ACTIONS = [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin!, except: USER_ACTIONS
   before_filter :authenticate_member!, only: USER_ACTIONS
-
+  before_filter :set_host_from_request, only: [:create]
 
   # GET /members
   # GET /members.json
@@ -80,4 +80,8 @@ class MembersController < ApplicationController
     end
   end
 
+  private
+  def set_host_from_request
+    ActionMailer::Base.default_url_options = { host: request.host_with_port }
+  end
 end
