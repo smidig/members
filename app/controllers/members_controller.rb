@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class MembersController < ApplicationController
-  USER_ACTIONS = [:show, :edit, :update, :destroy]
+  USER_ACTIONS = [:show, :edit, :update, :destroy, :change_participation]
   before_filter :authenticate_admin!, except: USER_ACTIONS
   before_filter :authenticate_member!, only: USER_ACTIONS
   before_filter :set_host_from_request, only: [:create]
@@ -78,6 +78,14 @@ class MembersController < ApplicationController
       format.html { redirect_to members_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /
+  def change_participation
+     current_member.change_participation
+     respond_to do |format|
+        format.html { redirect_to root_url }
+     end
   end
 
   private

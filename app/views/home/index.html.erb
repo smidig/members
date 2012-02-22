@@ -1,12 +1,49 @@
-<h3>Bla bla bla</h3>
+<div class="hero-unit">
+  <h1>Årsmøte </h1>
 
-<% if member_signed_in? %>
-<p>
-  <% if current_member.participate %>
-    Jeg deltar!
-  <% else %>
-    Dessverre, jeg har ikke muligheten til å delta
-      <%= link_to "Jeg kommer!", class: 'btn large' %>  gjøre denne til ajax og endre participate-feltet
-  <% end %>
+  <h3>Velkommen <%= member_signed_in? ? current_member.name: 'der' %>!</h3>
+  <br/>
+  <p>Smidigbevegelsens årlige hovedbegivenhet, smidigkonferansene, holder årsmøte 22.mars 2012 kl 16:00 i Oslo (sted vil utlyses). Bli med på arrangørsamlingen som starter umiddelbart etter årsmøtet og vær med å forme fremtiden!
+ </p>
+  <p>
+  Alle deltakere på Smidig2010 eller Smidig2011 inviteres også til å bli medlemmer av foreningen Smidigkonferansen.
+    <% if member_signed_in? %>
+       <p>Din status på deltakelse på årsmøtet (generalforsamlingen) og/eller arrangørkonferansen?
+        </p>
+        <%= current_member.participate ? "Du kommer!": "Du kommer ikke." %>
+        <br/>
+        Endre status?
+        <% if current_member.participate  %>
+          <%= link_to "Jeg kommer ikke", change_participation_path, class: 'btn btn-secondary btn-small' %>
+        <% else %>
+          <%= link_to "Jeg kommer!", change_participation_path, class: "btn btn-primary btn-large" %>
+        <% end %>
+      <% end %>
 </p>
-<% end %>
+
+
+</div>
+
+<!-- Example row of columns -->
+<div class="row">
+  <div class="span4">
+    <h2>Smidig2007-</h2>
+
+    <p> Første smidigkonferanse ble avholdt i 2007, som en nyskapende og annerledes konferanse. Det er fremdeles annerledes, men flere har tatt etter trenden med lyntaler (lightning talks). Open space er det fremdeles svært få som gjør.</p>
+  </div>
+  <div class="span4">
+    <h2>Bla bla bla</h2>
+
+    <p> Smidigkonferansene handler om erfaringsdeling, på godt norsk: prat! Konferansene har trukket tilsammen 2000 deltakere og 350 lyntaler siden 2007. <strong>Du</strong> kan være med gjøre en forskjell. Møt til arrangørkonferansen.</p>
+
+  </div>
+  <div class="span4">
+    <h2>Smidig2012</h2>
+
+    <p>Konferansen er fremdeles annerledes, men er ikke særlig innovativ lenger. Ønsker du det? Kom på <strong>Arrangørkonferansen</strong> og få en mulighet til å forme fremtiden.</p>
+
+    <!-- p><a class="btn" href="#">View details &raquo;</a></p -->
+  </div>
+</div>
+
+<hr>
