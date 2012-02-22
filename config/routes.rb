@@ -7,6 +7,7 @@ Members::Application.routes.draw do
   resources :members
 
   get 'statute_home', :to => 'home#statute'
+  get 'change_participation', to: 'members#change_participation'
 
   root :to => "home#index"
 

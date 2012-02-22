@@ -1,8 +1,9 @@
 <%= simple_form_for(@member, :wrapper => :inline, :html => { :class => 'form-stacked' }) do |f| %>
 
     <%= f.error_notification %>
-
-    <%= f.input :email, :label => 'E-postadresse' %><a data-content="We need your email in case we have follow up questions. We respect your privacy and will not share the email address with others." rel="popover" href="#" data-original-title="Email privacy">[?]</a>
+    <%= f.input :participate, as: :boolean, :label => "Jeg kommer/kommer ikke" %>
+    <%= f.input :email, :label => 'E-postadresse' %>
+    <!-- a data-content="We need your email in case we have follow up questions. We respect your privacy and will not share the email address with others." rel="popover" href="#" data-original-title="Email privacy">[?]</a -->
     <%= f.input :name, :label => 'Navn' %>
     <%= f.input :address, :label => 'Adresse' %>
     <%= f.input :postcode, :label => 'Postnr' %>

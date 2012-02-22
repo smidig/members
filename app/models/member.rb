@@ -11,6 +11,10 @@ class Member < ActiveRecord::Base
   validates :name,:email,:password, :password_confirmation,  :country, :city, :presence => true
   #validates :postcode, :presence => true, :numericality => true
 
+  def change_participation
+    self.update_attribute(:participate, !self.participate)
+  end
+
 
   def self.mass_invite(email_name_string)
     email_name_string.lines.reduce([]) do |members, line|
