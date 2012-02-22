@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 Members::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.assets.precompile += ["rails_admin/rails_admin.js", "rails_admin/rails_admin.css", "rails_admin/jquery.colorpicker.js", "rails_admin/jquery.colorpicker.css"]
 
   # Code is not reloaded between requests
   config.cache_classes = true
