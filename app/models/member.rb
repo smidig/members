@@ -27,6 +27,7 @@ class Member < ActiveRecord::Base
   def self.mass_invite!(email_name_string)
     mass_invite(email_name_string).each do |m|
       Member.invite!(m)
+      puts "invited {m}"
     end.count
   end
 end
