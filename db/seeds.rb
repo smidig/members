@@ -7,12 +7,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Admin.find_by_email(email = 'rubykurs@example.no') || Admin.create!(email: email, password: 'rubyrocks')
-
-Member.find_by_email(email = 'oma@example.com') ||
+a = Admin.find_by_email(email = 'rubykurs@example.com') || Admin.create!(email: email, password: 'rubyrocks')
+puts "admin created", a.inspect
+m = Member.find_by_email(email = 'oma@example.com') ||
   Member.create!(email: email, password: 'rubyrocks',
    name: "Ole Morten Heggebakken Amundsen",
    address: 'Gamlevegen 17',
    city: 'Porsgrunn',
    postcode: '3922'
    )
+puts "member created", m.inspect

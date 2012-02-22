@@ -60,6 +60,8 @@ module Members
 
     # For Twitter bootstrap
     config.app_generators.stylesheet_engine :less
+
+    ## For heroku
     config.assets.initialize_on_precompile = false
 
   end
