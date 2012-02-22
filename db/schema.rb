@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120219225527) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "members", :force => true do |t|
+    t.string   "email",                                :default => "",    :null => false
     t.string   "name"
     t.string   "address"
     t.string   "postcode"
@@ -39,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20120219225527) do
     t.string   "country"
     t.datetime "created_at",                                              :null => false
     t.datetime "updated_at",                                              :null => false
-    t.string   "email",                                :default => "",    :null => false
     t.string   "encrypted_password",                   :default => ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

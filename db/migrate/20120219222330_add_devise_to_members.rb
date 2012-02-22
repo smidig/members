@@ -2,7 +2,7 @@ class AddDeviseToMembers < ActiveRecord::Migration
   def self.up
     change_table(:members) do |t|
       ## Database authenticatable
-      t.string :email,              :null => false, :default => ""
+
       t.string :encrypted_password, :null => false, :default => ""
 
       ## Recoverable
@@ -40,7 +40,7 @@ class AddDeviseToMembers < ActiveRecord::Migration
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps
     end
-
+    change_column :members, :email,:string, null: false, default: ""
     add_index :members, :email,                :unique => true
     add_index :members, :reset_password_token, :unique => true
     # add_index :members, :confirmation_token,   :unique => true
