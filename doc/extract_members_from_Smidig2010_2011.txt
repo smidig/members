@@ -1,0 +1,9 @@
+heroku db:pull --app smidig2010
+mv db/development.sqlite3 db/smidig2010.sqlite3
+sqlite3 db/smidig2010.sqlite3
+> .output smidig2010.csv
+> .mode csv
+> select email, name from users;
+> .exit
+
+ditto for Smidig2011
