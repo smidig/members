@@ -1,35 +1,16 @@
 <p>Hei <%= @resource.name %>!</p>
 
-<p>Som deltaker på Smidig2010 og/eller Smidig2011 inviterer vi deg til å bli medlem av foreningen Smidigkonferansen. Vi innkaller også med dette til generalforsamling i Smidigkonferansen (DATO 21.mars?), som du kan velge å delta på. Du kan bli medlem selv om du ikke deltar på generalforsamlingen. </p>
+<p>Som deltaker på Smidig2010 og/eller Smidig2011 inviterer vi deg til å bli medlem  av foreningen Smidigkonferansen. Vi innkaller også med dette til årsmøte og generalforsamling i Smidigkonferansen, 22.mars kl 16:00, Oslo (mer info kommer), som du kan velge å delta på. Du kan bli medlem selv om du ikke deltar på generalforsamlingen. </p>
 
 <p>Som medlem kan du være med å velge styre i Smidigkonferansen. Du kan også stille til valg om du liker å jobbe lange dager uten betaling. Som medlem i foreningen vil du motta kun få epost, om vi vurderer det nødvendig eller interessant. </p>
 
 <p><%= link_to 'JA, jeg vil bli medlem', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></p>
 
 <p> Arrangørkonferanse:</p>
-<p> Åpent for alle! Vi holder arrangørkonferanse øyeblikkelig etter generalforsamlingen, kl XX den DD.MM.YYYY. Som alltid er det frivillige entusiaster som former konferansen og vi ønsker alle velkomne til å bidra. Møt opp og bidra til fornying og forbedring av smidigkonferansen, Smidig 2012 ! </p>
+<p> Åpent for alle! Vi holder arrangørkonferanse umiddelbart etter årsmøtet. Som alltid er det frivillige entusiaster som former konferansen og vi ønsker alle velkomne til å bidra. Møt opp og bidra til fornying og forbedring av smidigkonferansen, Smidig 2012 ! </p>
 
 <p>Om du ikke ønsker å bli medlem, ignorer denne mailen.</p>
 <p>Ha en fantastisk dag! </p>
 <p>
   Med vennelig hilsen <br />
-Styret, Smidigkonferanse</p>
-
-<p> =======<br /> yes da, dette er kun en test. finnner denne mailmalen på invitation_instructions.html.erb, repo er https://github.com/smidig/members
-  <br />
-  Jeg har ikke tilgang på heroku-app. KJ, kanskje vi skal opprette en ny under Smidig på heroku. For change owner må man involvere support på heroku. no fun. </p>
-<p>
-    Appen er kul folkens! Ingen tester virker, hoho, men den er enkelt. Vi har vanlig brukere (members) og admin bruker. Faktisk eget Back Office med RailsAdmin. clone, les README og prøv :)
-</p>
-<p>
-  Det er kun få oppgaver som gjenstår. Håper noen av dere andre får sett på dette imorgen. Det jeg tenker på da er
-  <ul>
-  <li> liste av eposter + navn fra tidligere Smidig2010/2011 (legg det i doc/)</li>
-    <li> denne mailen. datoer etc </li>
-    <li> FORSIDE kanskje bruke denne twitter bootstrap malen og fortelle om medlemskap i foreningen, om generalforsamling og om arrangørkonferansen etterpå. http://twitter.github.com/bootstrap/examples/hero.html </li>
-    <li>delta/ikke delta på konferanse </li>
-    <li>NICE: åpen? deltakerliste</li>
-    <li>NICE: velge deltakelse på arrangørkonferanse (Nice2: +1 deltaker)</li>
-    <li>NOT NICE: melde seg ut av forening</li>
-  </ul>
-</p>
+Styret, Smidigkonferansen</p>
