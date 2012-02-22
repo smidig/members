@@ -20,7 +20,14 @@ class Member < ActiveRecord::Base
     email_name_string.lines.reduce([]) do |members, line|
       email, name = line.split(',')
       raise "ugyldig format. både epost (#{email}) og navn (#{name}) må oppgis. Kontroller din input ved å trykke BACK knappen i nettleseren" if email.nil? || name.nil?
-      members << {email: email.chomp, name: name.gsub('"','').chomp}
+      email = email.chomp
+      if Member.find_by_email(email)
+         puts "member #{email} exists"
+      else
+        puts "inviting #{email}"
+        members << {email: email, name: name.gsub('"','').chomp}
+      end
+      members
     end
   end
 
