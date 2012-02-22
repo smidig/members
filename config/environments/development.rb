@@ -1,11 +1,3 @@
-# -*- encoding : utf-8 -*-
-require 'ostruct'
-if File.exists?(mailer_yml = "#{Rails.root}/config/mailer.yml")
-  options = YAML.load_file(mailer_yml)[Rails.env]
-  ActionMailer::Base.smtp_settings = OpenStruct.new(options).smtp_settings
-end
-
-
 Members::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
