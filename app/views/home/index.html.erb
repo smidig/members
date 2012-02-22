@@ -1,22 +1,27 @@
 <div class="hero-unit">
   <h1>Årsmøte </h1>
 
-  <h3>Velkommen <%= member_signed_in? ? current_member.name: 'der' %>!</h3>
+  <h3>Velkommen <%= member_signed_in? ? current_member.name: '' %>!</h3>
   <br/>
-  <p>Smidigbevegelsens årlige hovedbegivenhet, smidigkonferansene, holder årsmøte 22.mars 2012 kl 16:00 i Oslo (sted vil utlyses). Bli med på arrangørsamlingen som starter umiddelbart etter årsmøtet og vær med å forme fremtiden!
- </p>
-  <p>
+  <p>Smidigbevegelsens årlige hovedbegivenhet, smidigkonferansene, holder årsmøte <strong>22.mars 2012 kl 16:00 i Oslo</strong> (sted vil utlyses). Bli med på arrangørsamlingen som starter umiddelbart etter årsmøtet og vær med å forme fremtiden!
   Alle deltakere på Smidig2010 eller Smidig2011 inviteres også til å bli medlemmer av foreningen Smidigkonferansen.
     <% if member_signed_in? %>
-       <p>Din status på deltakelse på årsmøtet (generalforsamlingen) og/eller arrangørkonferansen?
-        </p>
-        <%= current_member.participate ? "Du kommer!": "Du kommer ikke." %>
-        <br/>
-        Endre status?
+       <p>Din status på deltakelse på årsmøtet (generalforsamlingen) og/eller arrangørkonferansen:
+       </p>
+
         <% if current_member.participate  %>
-          <%= link_to "Jeg kommer ikke", change_participation_path, class: 'btn btn-secondary btn-small' %>
+            <p>
+              <span class="label label-success">JA</span> Du kommer.
+
+              </p>
+          <p>
+          <%= link_to "Endre til &raquo; Jeg kommer ikke", change_participation_path, class: 'btn btn-secondary btn-small' %>
         <% else %>
-          <%= link_to "Jeg kommer!", change_participation_path, class: "btn btn-primary btn-large" %>
+          <p>
+            <span class="label label-important">NEI</span> Du kommer ikke.
+          </p>
+          <p>
+          <%= link_to "Endre til &raquo; Jeg kommer!".html_safe, change_participation_path, class: "btn btn-primary btn-large" %>
         <% end %>
       <% end %>
 </p>
