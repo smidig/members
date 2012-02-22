@@ -1,6 +1,9 @@
 # -*- encoding : utf-8 -*-
 class MembersController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index]
+  USER_ACTIONS = [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!, except: USER_ACTIONS
+  before_filter :authenticate_member!, only: USER_ACTIONS
+
 
   # GET /members
   # GET /members.json
@@ -24,35 +27,28 @@ class MembersController < ApplicationController
     end
   end
 
-  # GET /members/new
-  # GET /members/new.json
-  def new
-    @member = Member.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @member }
-    end
-  end
 
   # GET /members/1/edit
   def edit
     @member = Member.find(params[:id])
   end
 
+
+
+  # GET /members/new
+  # GET /members/new.json
+  def new
+    respond_to do |format|
+      format.html # new.html.erb
+    end
+  end
+
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(params[:member])
-
+    count = Member.mass_invite!(params["MassInvite"]["emails"])
     respond_to do |format|
-      if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render json: @member, status: :created, location: @member }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
-      end
+      format.html { redirect_to new_member_path, notice: "Yaay! Totalt #{count} invitasjoner ble sendt." }
     end
   end
 
@@ -83,4 +79,5 @@ class MembersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

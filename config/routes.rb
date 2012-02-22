@@ -4,8 +4,7 @@ Members::Application.routes.draw do
 
   devise_for :admins
   devise_for :members
-
-  #resources :members
+  resources :members
 
   get 'statute_home', :to => 'home#statute'
 

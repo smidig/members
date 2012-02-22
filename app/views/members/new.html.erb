@@ -1,3 +1,13 @@
-<h3>Meld deg inn i Smidigkonferansen</h3>
+<h3>Masseinvitasjoner til Smidigkonferansen</h3>
 
-<%= render 'form' %>
+<%= form_for "MassInvite",  :url => members_path, :html => {:method => :post} do |f| %>
+
+    <p></p>
+  <p>Lim inn eposter og navn under. Vi skiller deltaker på linjeskift og epost og navn på komma, slik:</p>
+  <p>oma@example.com, Ole Morten Heggebakken Amundsen<br/>
+  kja@example.com, Knut Johannes Dahle</p>
+  <p></p>
+  <p><%= f.text_area :emails, class: 'xxlarge' %></p>
+
+  <p><%= f.submit "Send invitasjon til alle" %></p>
+<% end %>
