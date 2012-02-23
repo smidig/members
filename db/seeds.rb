@@ -14,6 +14,7 @@ m = Member.find_by_email(email = 'oma@example.com') ||
    name: "Ole Morten Heggebakken Amundsen",
    address: 'Gamlevegen 17',
    city: 'Porsgrunn',
-   postcode: '3922'
+   postcode: '3922',
+   country: 'Norge'
    )
 puts "member created", m.inspect
