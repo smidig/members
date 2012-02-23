@@ -2,8 +2,10 @@ require 'test_helper'
 
 class MembersControllerTest < ActionController::TestCase
   setup do
-    @member = members(:one)  
+    @member = members(:one)
+    @member.update_attributes!(password: "not blank", password_confirmation: "not blank")
     sign_in admins(:one)
+    sign_in @member
   end
 
   test "should get index" do
@@ -17,14 +19,6 @@ class MembersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create member" do
-    assert_difference('Member.count') do
-      post :create, member: @member.attributes.merge(:email => '#{rand}@member.test')
-    end
-
-    assert_redirected_to member_path(assigns(:member))
-  end
-
   test "should show member" do
     get :show, id: @member
     assert_response :success
@@ -36,7 +30,7 @@ class MembersControllerTest < ActionController::TestCase
   end
 
   test "should update member" do
-    put :update, id: @member, member: @member.attributes
+    put :update, id: @member, member: {name: "Ola Noooormann"}
     assert_redirected_to member_path(assigns(:member))
   end
 

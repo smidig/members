@@ -6,9 +6,9 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :address, :city, :postcode,:country, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :participate, :name, :address, :city, :postcode,:country, :email, :password, :password_confirmation, :remember_me
 
-  validates :name,:email,:password, :password_confirmation,  :country, :city, :presence => true
+  validates :name,:email, :country, :city, :presence => true
   #validates :postcode, :presence => true, :numericality => true
 
   def change_participation

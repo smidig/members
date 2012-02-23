@@ -9,8 +9,8 @@
     <%= f.input :postcode, :label => 'Postnr' %>
     <%= f.input :city, :label => 'Sted' %>
     <%= f.input :country, :as => :string, :label => 'Land', :input_html => { :value => 'Norge' } %>
-    <%= f.input :password%>
-    <%= f.input :password_confirmation %>
+    <%= f.input :password,  :label => 'Passord *'%>
+    <%= f.input :password_confirmation,  :label => 'Gjenta passord *' %>
     <%= f.submit 'Godta invitasjon', :class =>'btn primary' %>
 
 <% end %>

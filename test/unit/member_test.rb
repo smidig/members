@@ -2,12 +2,14 @@
 require 'test_helper'
 
 class MemberTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
   test "create member" do
-  	 attributes = members(:one).attributes.merge(:email => '#{rand}@member.test')		
-  	 Member.create!(attributes)
+    Member.create!(:email => '#{rand}@member.test',
+                    name: 'olli',
+                    password: "password",
+                    password_confirmation: "password",
+                    postcode: 2222,
+                    city: "byyy",
+                    country: "Norge"
+     )
   end
 end

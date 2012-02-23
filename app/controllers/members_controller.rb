@@ -56,9 +56,15 @@ class MembersController < ApplicationController
   # PUT /members/1.json
   def update
     @member = Member.find(params[:id])
-
     respond_to do |format|
-      if @member.update_attributes(params[:member])
+      m = params[:member]
+      if if m[:password].blank?                ### IF block returning bool
+          @member.update_without_password(m)
+        else
+          @member.update_attributes(m)
+          sign_in @member, :bypass => true
+          true
+        end                                     ### end IF block returning bool to outer if.
         format.html { redirect_to @member, notice: 'Member was successfully updated.' }
         format.json { head :no_content }
       else

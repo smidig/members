@@ -7,6 +7,8 @@ one:
   postcode: 0291
   city: MyString
   country: MyString
+  encrypted_password: yo
+
 
 two:
   email: member2@member.test
@@ -15,3 +17,4 @@ two:
   postcode: 0982
   city: MyString
   country: MyString
+  encrypted_password: abcdef1
