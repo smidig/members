@@ -18,6 +18,7 @@ gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :re
 gem 'twitter-bootstrap-rails' #, '~> 1.4.3'
 
 group :production do
+  gem 'newrelic_rpm'
   gem 'pg'
   gem 'yui-compressor'
 end
