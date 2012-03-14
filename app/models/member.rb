@@ -11,6 +11,11 @@ class Member < ActiveRecord::Base
   validates :name,:email, :country, :city, :presence => true
   #validates :postcode, :presence => true, :numericality => true
 
+  scope :members, where('sign_in_count > 0').order('participate DESC')
+  scope :participants, where(:participate => true)
+
+
+
   def change_participation
     self.update_attribute(:participate, !self.participate)
   end

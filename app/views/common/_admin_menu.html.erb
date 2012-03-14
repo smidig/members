@@ -1,5 +1,5 @@
 <% if admin_signed_in?  %>
-  <li><%= link_to('Invitasjon', new_member_path) %></li>
+  <li><%= link_to('Medlemmer', members_path) %></li>
   <li><%= link_to('Backoffice', rails_admin_path) %></li>
   <li><%= link_to "Admin logg ut", destroy_admin_session_path, :method => :delete %> </li>
 <% else  %>

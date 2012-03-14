@@ -1,10 +1,25 @@
-<h3>Medlemmer</h3>
+<h1>Medlemmer</h1>
 
-<table>
+<p>
+<%= link_to 'Invitér nytt medlem', new_member_path, :class => 'btn btn-primary' %>
+</p>
+
+
+<p>
+  Antall medlemmer: <%= @members.count %>
+  <br/>
+  Antall påmeldte: <%= @participants.count %>
+  <br/>
+  Antall inviterte: <%= @invited_count %>
+</p>
+
+<h2> Medlemmer medlemmer </h2>
+<table class="table table-condensed">
+  <thead>
   <tr>
-    <th>Epost</th>
+    <th>Påmeldt</th>
     <th>Navn</th>
-    <th>Adresse</th>
+    <th>Epost</th>
     <th>Postnr</th>
     <th>Sted</th>
     <th>Land</th>
@@ -12,12 +27,15 @@
     <th></th>
     <th></th>
   </tr>
+</thead>
 
+<tbody>
 <% @members.each do |member| %>
   <tr>
-    <td><%= member.email %></td>
+    <td><%= member.participate ? "JA" : "Nei" %></td>
     <td><%= member.name %></td>
-    <td><%= member.address %></td>
+    <td><%= member.email %></td>
+
     <td><%= member.postcode %></td>
     <td><%= member.city %></td>
     <td><%= member.country %></td>
@@ -25,8 +43,8 @@
     <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete, :class => 'btn danger'  %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'Nytt medlem', new_member_session_path, :class => 'btn primary' %>

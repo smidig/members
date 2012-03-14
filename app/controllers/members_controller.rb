@@ -8,8 +8,9 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
-
+    @members = Member.members
+    @participants = Member.participants
+    @invited_count = Member.count
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @members }
