@@ -1,0 +1,16 @@
+<div class="modal hide" id="<%= themodal %>">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3><%= title %></h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      <% persons.each do |p| %>
+        "<%= p.name %>" <%= "<#{p.email}>" %>,
+      <% end %>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
