@@ -3,17 +3,18 @@
 
   <h3>Velkommen <%= member_signed_in? ? current_member.name: '' %>!</h3>
   <br/>
-  <p>Smidigbevegelsens årlige hovedbegivenhet, smidigkonferansene, holder årsmøte <strong>22.mars 2012 kl 16:00 i Oslo</strong> (sted vil utlyses). Bli med på arrangørsamlingen som starter umiddelbart etter årsmøtet og vær med å forme fremtiden!
+  <p>Smidigbevegelsens årlige hovedbegivenhet, smidigkonferansene, holder årsmøte <strong>22.mars 2012 kl 16:00 i 3.etg på Scotsman i Oslo</strong> (<a href="http://maps.google.no/maps?um=1&ie=UTF-8&q=scotsman+oslo&fb=1&gl=no&hq=scotsman&hnear=0x46416e61f267f039:0x7e92605fd3231e9a,Oslo&cid=0,0,11535085172773240985&ei=vyJnT6igO6aD4gTq6cHZBw&sa=X&oi=local_result&ct=image&ved=0CB0Q_BI">kart</a>) Kontaktperson Arne Løvold, tlf 91761465. Bli med på arrangørsamlingen som starter umiddelbart etter årsmøtet og vær med å forme fremtiden!
   Alle deltakere på Smidig2010 eller Smidig2011 inviteres også til å bli medlemmer av foreningen Smidigkonferansen.
     <% if member_signed_in? %>
        <p>Din status på deltakelse på årsmøtet (generalforsamlingen) og/eller arrangørkonferansen:
        </p>
 
+  <div class="well">
         <% if current_member.participate  %>
-            <p>
-              <span class="label label-success">JA</span> Du kommer.
 
-              </p>
+  <p class="large">
+              <span class="label label-success">JA</span> Du kommer.
+</p>
           <p>
           <%= link_to "Endre til &raquo; Jeg kommer ikke".html_safe, change_participation_path, class: 'btn btn-danger btn-small' %>
         <% else %>
@@ -24,6 +25,7 @@
           <%= link_to "Endre til &raquo; Jeg kommer!".html_safe, change_participation_path, class: "btn btn-primary btn-large" %>
         <% end %>
       <% end %>
+</div>
 </p>
 
 
