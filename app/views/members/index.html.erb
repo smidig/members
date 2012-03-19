@@ -6,12 +6,14 @@
 
 
 <p>
-  Antall medlemmer: <%= @members.count %>
+  Antall <a data-toggle="modal" href="#membersModal">medlemmer</a>: <%= @members.count %>
   <br/>
-  Antall påmeldte: <%= @participants.count %>
+  Antall <a data-toggle="modal" href="#participantsModal">påmeldte</a>: <%= @participants.count %>
   <br/>
   Antall inviterte: <%= @invited_count %>
 </p>
+<%= render partial: 'email_modal', locals: {themodal: 'membersModal', persons: @members, title: "Foreningens medlemmer"} %>
+<%= render partial: 'email_modal', locals: {themodal: 'participantsModal', persons: @participants, title: "Påmeldte til genfors 20.mars" } %>
 
 <h2> Medlemmer medlemmer </h2>
 <table class="table table-condensed">
